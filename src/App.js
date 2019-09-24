@@ -17,41 +17,113 @@ import Greeting from './components/Greeting'
 import Conditional from './components/Conditional'
 import { setTimeout } from 'timers';
 import { directive } from '@babel/types';
-
-
-
-
+import Form from './FormContainer'
 
 class App extends React.Component{
-
   constructor(){
     super()
-    this.state={
-      loading:false,
-      character:{}
-    }
+   
+   
   }
-  componentDidMount(){
-    this.setState({loading:true})
-    fetch("https://swapi.co/api/people/1/")
-    .then(response=>response.json())
-    .then(data=>{
-    this.setState({
-      loading:false,
-      character:data
-    })
 
-  })
-  }
   render(){
-    const text=this.state.loading ? "Loading...":this.state.character.name
     return(
-      <div>
-        <p>{text}</p>
-        </div>
+    
+      
+           <Form/>
+                      
+
     )
   }
 }
+
+
+// class App extends React.Component{
+//   constructor(){
+//     super()
+//     this.state={
+//       firstName:"",
+//       lastName:"",
+//       isFriendly:true
+//     }
+//     this.handleChange=this.handleChange.bind(this)
+//    }
+// handleChange (event){
+// this.setState({
+//   [event.target.name]:event.target.value
+//   // isFriendly:false
+ 
+// })
+// }
+//    render(){
+//      return (
+//        <div>
+//          <form>
+         
+//             <input type="text"
+//             name="firstName" 
+//             value={this.state.firstName} 
+//             placeholder="First Name" 
+//             onChange={this.handleChange}/>
+//             <br/>
+//             <input type="text" 
+//             name="lastName" 
+//              value={this.state.lastName} 
+//               placeholder="Last Name" 
+//               onChange={this.handleChange}/>
+              
+//               <br/>
+             
+           
+//            <textarea
+//            value="Type something here..."/>
+//            <br/>
+//            <label>Is friendly?
+//            <input
+//            type="checkbox"
+//           name="isFriendly"
+//            checked={this.state.isFriendly}/>
+//            onChange={this.handleChange}
+//             </label>
+//           <h1>{this.state.firstName} {this.state.lastName}</h1>
+//            </form>
+       
+//          </div>
+//      )
+//    }
+// }
+
+
+// class App extends React.Component{
+
+//   constructor(){
+//     super()
+//     this.state={
+//       loading:false,
+//       character:{}
+//     }
+//   }
+//   componentDidMount(){
+//     this.setState({loading:true})
+//     fetch("https://swapi.co/api/people/1/")
+//     .then(response=>response.json())
+//     .then(data=>{
+//     this.setState({
+//       loading:false,
+//       character:data
+//     })
+
+//   })
+//   }
+//   render(){
+//     const text=this.state.loading ? "Loading...":this.state.character.name
+//     return(
+//       <div>
+//         <p>{text}</p>
+//         </div>
+//     )
+//   }
+// }
 
 // class App extends React.Component{
 //   constructor(){
